@@ -58,12 +58,13 @@ function $info(info){
 
 function shuffleCharacters(){
   $(".mol-game").append("<h1 class=\"opacity-half\" id=\"mol-characters\"></h1>");
+  //Shuffle a random number of characters
   $.each(_.sampleSize(_.dropRight(realCharacters), _.random(5, 7)), function(key, values){
     $("#mol-characters").delay(100).fadeOut(100, function(){
       $(this).text(values);
     }).fadeIn();
   });
-  //Final character
+  //Final character gets zoomed and darker
   $("#mol-characters").fadeOut(100, function(){
     $(this).text(_.sample(realCharacters));
   }).fadeIn().animate({fontSize: "+=3rem", opacity: 1}, 600, "swing", function(){
@@ -71,15 +72,19 @@ function shuffleCharacters(){
     //Ask for the winner of the round
     $(".mol-game").append("<div class=\"mt-5 opacity-none\" id=\"mol-round\"></div>");
     $("#mol-round").delay(2000).hide(0, function(){
+      //Who was fastest? Add button for each player
       $(this).append(tell("Kuka oli nopein?"));
       $.each(gamePlayers, function(key, values){
         $("#mol-round").append(btn(key, "winner", key));
       });
+      //Shuffle characters again
       $(this).append(btnSmall("Uusi kirjain", "roll", "go"));
       $("[data-mol-winner]").click(function(){
+        //Add point to winner
         gamePlayers[$(this).data("mol-winner")] += 1;
         runRound();
       });
+      //Shuffle characters again
       $("[data-mol-roll]").click(function(){
         $("#mol-round").slideUp(300, function(){
           $(this).remove();
@@ -95,6 +100,7 @@ function shuffleCharacters(){
 }
 
 function shuffleQuestion(){
+  //Shuffle question
   currentQuestion = _.sample(gameQuestions);
   $(".mol-game").append("<div class=\"mol-question opacity-none d-none\"><p>?</p></div>");
   //Show question
@@ -102,6 +108,7 @@ function shuffleQuestion(){
     $(this).removeClass("opacity-none d-none");
   });
   $(".mol-question p").text(currentQuestion).animate({fontSize: "+=1rem"}, 600, "swing", function(){
+    //Remove asked question from the question list
     _.pull(gameQuestions, currentQuestion);
   });
 }
@@ -110,12 +117,15 @@ function runRound(){
   $(".mol-game").fadeOut(600, function(){
     $(this).empty().fadeIn(300, function(){
       if (_.isEmpty(gameQuestions)){
+        //Show points
         $next("Pisteet!");
         $.each(gamePlayers, function(key, values){
           $(".mol-game").append("<p class=\"h4\"><strong>" + key + "</strong> sai <strong>" + values + "</strong> pistettä!</p>");
         });
+        //Info: Players are not organized by amount of points
         $(this).append(tellInfo("Tiedoksi! Pelaajat eivät ole pisteiden mukaisessa järjestyksessä. Nimetkää halutessanne voittaja.<br>Uusi peli? Lataa sivu uudestaan!"));
       } else {
+        //Run round
         shuffleCharacters();
         shuffleQuestion();
       }
@@ -130,7 +140,7 @@ $(function(){
   });
   //Start game
   $("[data-mol]").click(function(){
-    //Ask language
+    //Ask game language
     $next("Valitse kysymysten kieli");
     $.each(languages, function(key, value){
       $(".mol-game").append(btn(value.name, "language", key));
@@ -170,6 +180,7 @@ $(function(){
             $info("Lisää ainakin 2 pelaajaa!");
           } else{
             //Here the game really starts
+            $(".mol-info").clearQueue().slideUp();
             $next("Möläytys alkakoon!");
             $(".mol-game .intro").delay(3000).fadeOut(1000, function(){
               //Shuffle characters
