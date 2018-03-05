@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- '8'
+before_install:
+- npm install -g greenkeeper-lockfile@1
+before_script:
+- greenkeeper-lockfile-update
+- npm install -g harp
+after_script: greenkeeper-lockfile-upload
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: true
+  local-dir: www
+  on:
+    branch: master
+env:
+  global:
+    secure: UqFJPheb3iDb3cbzhsHsF5ybNyMmf+JGrNBGd/TwYh5l6pAq4XTIpjlfiJqcYPxSTeF2qzICMtNf5dShVqS87eWlPnyvQpQcAzdi3HlorOPw/VjUcM4B+DQAGGADuco1MKZiJ3XhLyFPlHnXbGkSFPt9YztTmks32CxUl8kaLgRs2rShlE+LMb0bNqtsbb7lHV2aHBPySwnLwS992zwTXV9uLF0WpRkFtYhBchwQjscad5y2qPSx8qx8fwq9rCCWsmop2PcUUnylGh+lbGeKl0X20Pl7Pga1BJGyywonuDVXUxEzvFjJTykuLOc/QQFJp4Y6Kg+cU6wb5TiRET/d+WQTUcbSHustx+3BpoE7HEPH9dmmJzE3fh9JKiO45Et+G9qGsP5yZNelgyfsD+Rzf1UOm2P7E6cTCHhmjbwZtH2NfQgcuuHCoUrA0jErPKTS45+pCMuUAHeLrWjEY+LFCPXW/NDhXhAx/9MMG12EgylgiEdgy75mk/qxLvJS2/bemLDDJY7RjXHHqN1gVhFEubfnLiPjWLf643VzdNYhnMM4DrlZouZEBASmm1LrMrC15FpRq/5hRCMieHWosMJQfyErGEZoKoPsjyyGoGpzEcWKzBpK5TFByIpd9XlasAvFFlDuItk6PQ4mHgtwbFpwSZCDR3rG24dWpc9QPkd7eNY=
