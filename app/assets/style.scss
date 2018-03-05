@@ -1,0 +1,58 @@
+/*! Info: https://git.io/vAXSX */
+
+$font-family-sans-serif: source-sans-pro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$intro-font-family: permanent-marker, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$headings-font-weight: 400;
+$badge-font-weight: 600;
+$btn-font-weight: 600;
+
+$headings-margin-bottom: 1rem;
+
+$enable-rounded: false;
+$enable-shadows: true;
+
+.mol-container{
+  @extend .d-flex, .flex-column, .justify-content-center, .align-items-center, .container, .text-center;
+  height: 100vh;
+}
+
+.mol-game, .mol-info{
+  width: 100vh;
+}
+
+.mol-question{
+  @extend .d-inline-block, .border, .border-secondary, .py-3, .px-5, .mt-3;
+}
+
+.mol-question p{
+  @extend .intro, .h3, .m-0;
+}
+
+.intro{
+  font-family: $intro-font-family;
+}
+
+.opacity-none{
+  opacity: 0;
+}
+
+.opacity-half{
+  opacity: 0.5;
+}
+
+//Required
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+//Extra
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/forms";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/transitions";
+@import "node_modules/bootstrap/scss/badge";
+@import "node_modules/bootstrap/scss/utilities";
+@import "node_modules/bootstrap/scss/print";
