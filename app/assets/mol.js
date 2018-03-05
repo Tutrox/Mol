@@ -96,10 +96,10 @@ function shuffleCharacters(){
 
 function shuffleQuestion(){
   currentQuestion = _.sample(gameQuestions);
-  $(".mol-game").append("<div class=\"mol-question opacity-none\"><p>?</p></div>");
+  $(".mol-game").append("<div class=\"mol-question opacity-none d-none\"><p>?</p></div>");
   //Show question
-  $(".mol-question").animate({opacity: 1}, 600, "swing", function(){
-    $(this).removeClass("opacity-none");
+  $(".mol-question").slideDown(300).animate({opacity: 1}, 600, "swing", function(){
+    $(this).removeClass("opacity-none d-none");
   });
   $(".mol-question p").text(currentQuestion).animate({fontSize: "+=1rem"}, 600, "swing", function(){
     _.pull(gameQuestions, currentQuestion);
