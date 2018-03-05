@@ -114,7 +114,7 @@ function runRound(){
         $.each(gamePlayers, function(key, values){
           $(".mol-game").append("<p class=\"h4\"><strong>" + key + "</strong> sai <strong>" + values + "</strong> pistettä!</p>");
         });
-        $(this).append(tellInfo("Tiedoksi! Pelaajat eivät ole järjestetty pisteiden mukaan. Nimekää voittaja jos niin huvittaa.<br>Uusi peli? Lataa sivu uudestaan!"));
+        $(this).append(tellInfo("Tiedoksi! Pelaajat eivät ole pisteiden mukaisessa järjestyksessä. Nimetkää halutessanne voittaja.<br>Uusi peli? Lataa sivu uudestaan!"));
       } else {
         shuffleCharacters();
         shuffleQuestion();
