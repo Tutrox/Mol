@@ -18,8 +18,60 @@ var languages = {
 };
 var questions = {
   finnish: {
-    classic: ["kauppakeskus", "maa"],
-    tech: ["ohjelmointikieli", "tietokonevalmistaja"]
+    classic: [
+      "substantiivi",
+      "kasvi",
+      "nisäkäs",
+      "adjektiivi",
+      "automerkki",
+      "joki",
+      "bändi",
+      "slangi",
+      "urheilija",
+      "poliitikko",
+      "kirjailija",
+      "taiteilija",
+      "puu / pensas",
+      "sukunimi",
+      "työväline",
+      "tytön nimi",
+      "englanninkielinen sana",
+      "hedelmä / hyötykasvi",
+      "urheilulaji",
+      "metalli / alkuaine",
+      "astia",
+      "maa",
+      "juoma",
+      "vuori / vuoristo",
+      "laulaja",
+      "pojan nimi",
+      "huonekalu",
+      "laite",
+      "ruotsinkielinen sana",
+      "ammatti",
+      "saari / saaristo",
+      "väri / värisävy",
+      "kaupunki",
+      "materiaali",
+      "ruokalaji",
+      "rakennus / rakennelma",
+      "vaate",
+      "näyttelijä",
+      "kirja (nimi)",
+      "säveltäjä",
+      "kala",
+      "kirjallisuuden henkilö / olento",
+      "lintu",
+      "järvi / meri / yms.",
+      "verbi",
+      "peli",
+      "leivonnainen",
+      "ihmiskehon osa"
+    ],
+    tech: [
+      "ohjelmointikieli",
+      "tietokonevalmistaja"
+    ]
   },
   swedish: {
     classic: ["köpcenter", "land"]
