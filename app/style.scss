@@ -14,48 +14,50 @@ $headings-margin-bottom: 1rem;
 $enable-rounded: false;
 $enable-shadows: true;
 
-.mol-container{
+.mol-container {
   @extend .d-flex, .flex-column, .justify-content-center, .align-items-center, .container, .text-center;
+
   height: 100vh;
 }
 
-.mol-game, .mol-info{
+.mol-game,
+.mol-info {
   width: 90vw;
   max-width: 800px;
 }
 
-.mol-question{
+.mol-question {
   @extend .d-inline-block, .border, .border-secondary, .py-3, .px-5, .mt-3;
 }
 
-.mol-question p{
+.mol-question p {
   @extend .intro, .h3, .m-0;
 }
 
-.intro{
+.intro {
   font-family: $intro-font-family;
 }
 
-.opacity-none{
+.opacity-none {
   opacity: 0;
 }
 
-.opacity-half{
+.opacity-half {
   opacity: 0.5;
 }
 
 //Required
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
 //Extra
-@import "node_modules/bootstrap/scss/reboot";
-@import "node_modules/bootstrap/scss/type";
-@import "node_modules/bootstrap/scss/images";
-@import "node_modules/bootstrap/scss/grid";
-@import "node_modules/bootstrap/scss/forms";
-@import "node_modules/bootstrap/scss/buttons";
-@import "node_modules/bootstrap/scss/transitions";
-@import "node_modules/bootstrap/scss/badge";
-@import "node_modules/bootstrap/scss/utilities";
-@import "node_modules/bootstrap/scss/print";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/print";

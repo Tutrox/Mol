@@ -5,7 +5,6 @@ before_install:
 - npm install -g greenkeeper-lockfile@1
 before_script:
 - greenkeeper-lockfile-update
-- npm install -g harp
 after_script: greenkeeper-lockfile-upload
 deploy:
   provider: pages

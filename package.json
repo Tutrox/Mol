@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "A cool game",
   "scripts": {
-    "test": "npm-run-all lint:* build",
-    "build": "harp compile app www",
-    "lint:css": "stylelint --syntax scss \"assets/style.scss\"",
-    "lint:js": "eslint \"assets/mol.js\"",
-    "serve": "harp server app"
+    "test": "npm-run-all build:*",
+    "build:css": "scss-powertools app/style.scss www/assets/style.css -p",
+    "build:js": "rollup -c",
+    "build:site": "cp app/index.html www/",
+    "serve": "http-server www"
   },
   "repository": {
     "type": "git",
@@ -20,12 +20,21 @@
   },
   "homepage": "https://github.com/Tutrox/Mol#readme",
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
     "bootstrap": "^4.0.0",
     "eslint": "^4.18.1",
+    "http-server": "^0.11.1",
+    "jquery": "^3.3.1",
+    "lodash-es": "^4.17.8",
     "npm-run-all": "^4.1.2",
-    "stylelint": "^9.1.1",
-    "stylelint-config-recommended-scss": "^3.1.0",
-    "stylelint-config-standard": "^18.1.0",
-    "stylelint-scss": "^2.4.0"
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "scss-powertools": "1.0.1"
   }
 }

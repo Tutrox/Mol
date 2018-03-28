@@ -1,12 +1,16 @@
 {
     "env": {
-        "browser": true
+        "browser": true,
+        "es6": true
     },
     "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module"
+    },
     "rules": {
         "indent": [
             "error",
-            4
+            2
         ],
         "linebreak-style": [
             "error",
@@ -14,7 +18,8 @@
         ],
         "quotes": [
             "error",
-            "double"
+            "double",
+            {"allowTemplateLiterals": true}
         ],
         "semi": [
             "error",
