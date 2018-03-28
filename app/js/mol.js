@@ -18,7 +18,7 @@ function $info(info){
 }
 
 function shuffleCharacters(){
-  $(".mol-game").append("<h1 class=\"opacity-half\" id=\"mol-characters\"></h1>");
+  $(".mol-game").append(`<h1 class="opacity-half" id="mol-characters"></h1>`);
   //Shuffle a random number of characters
   $.each(sampleSize(dropRight(realCharacters), random(5, 7)), function(key, values){
     $("#mol-characters").delay(100).fadeOut(100, function(){
@@ -31,7 +31,7 @@ function shuffleCharacters(){
   }).fadeIn().animate({fontSize: "+=3rem", opacity: 1}, 600, "swing", function(){
     $(this).removeClass("opacity-half");
     //Ask for the winner of the round
-    $(".mol-game").append("<div class=\"mt-5 opacity-none\" id=\"mol-round\"></div>");
+    $(".mol-game").append(`<div class="mt-5 opacity-none" id="mol-round"></div>`);
     $("#mol-round").delay(2000).hide(0, function(){
       //Who was fastest? Add button for each player
       $(this).append(tell("Kuka oli nopein?"));
@@ -63,7 +63,7 @@ function shuffleCharacters(){
 function shuffleQuestion(){
   //Shuffle question
   currentQuestion = sample(gameQuestions);
-  $(".mol-game").append("<div class=\"mol-question opacity-none d-none\"><p>?</p></div>");
+  $(".mol-game").append(`<div class="mol-question opacity-none d-none"><p>?</p></div>`);
   //Show question
   $(".mol-question").slideDown(300).animate({opacity: 1}, 600, "swing", function(){
     $(this).removeClass("opacity-none d-none");
@@ -81,7 +81,7 @@ function runRound(){
         //Show points
         $next("Pisteet!");
         $.each(gamePlayers, function(key, values){
-          $(".mol-game").append("<p class=\"h4\"><strong>" + key + "</strong> sai <strong>" + values + "</strong> pistettä!</p>");
+          $(".mol-game").append(`<p class="h4"><strong>${key}</strong> sai <strong>${values}</strong> pistettä!</p>`);
         });
         //Info: Players are not organized by amount of points
         $(this).append(tellInfo("Tiedoksi! Pelaajat eivät ole pisteiden mukaisessa järjestyksessä. Nimetkää halutessanne voittaja.<br>Uusi peli? Lataa sivu uudestaan!"));
@@ -120,7 +120,7 @@ $(function(){
         gameQuestions = clone(gameType);
         //Ask for players
         $next("Pelaajat");
-        $(".mol-game").append("<input class=\"form-control form-control-lg mb-2\" id=\"mol-name\" type=\"text\" placeholder=\"Nimenne, kiitos!\">")
+        $(".mol-game").append(`<input class="form-control form-control-lg mb-2" id="mol-name" type="text" placeholder="Nimenne, kiitos!">`)
           .append(btnSmall("Lisää", "name", "add") + btn("Aloita möläyttäminen!", "start", "go"));
         //Add player
         $("[data-mol-name]").click(function(){
