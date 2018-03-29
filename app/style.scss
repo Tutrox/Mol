@@ -14,10 +14,18 @@ $headings-margin-bottom: 1rem;
 $enable-rounded: false;
 $enable-shadows: true;
 
-.mol-container {
-  @extend .d-flex, .flex-column, .justify-content-center, .align-items-center, .container, .text-center;
+//Required
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
 
-  height: 100vh;
+.mol-container {
+  @extend .d-flex, .flex-column, .justify-content-center, .align-items-center, .text-center, .py-3;
+
+  @include make-container();
+  @include make-container-max-widths();
+
+  min-height: 100vh;
 }
 
 .mol-game,
@@ -46,18 +54,10 @@ $enable-shadows: true;
   opacity: 0.5;
 }
 
-//Required
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
 //Extra
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
-@import "bootstrap/scss/images";
-@import "bootstrap/scss/grid";
 @import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
-@import "bootstrap/scss/badge";
 @import "bootstrap/scss/utilities";
-@import "bootstrap/scss/print";
