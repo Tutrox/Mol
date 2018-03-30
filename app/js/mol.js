@@ -31,7 +31,7 @@ function shuffleCharacters(){
   }).fadeIn().animate({fontSize: "+=3rem", opacity: 1}, 600, "swing", function(){
     $(this).removeClass("opacity-half");
     //Ask for the winner of the round
-    $(".mol-game").append(`<div class="mt-5 opacity-none" id="mol-round"></div>`);
+    $(".mol-game").append(`<div class="opacity-none" id="mol-round"></div>`);
     $("#mol-round").delay(2000).hide(0, function(){
       //Who was fastest? Add button for each player
       $(this).append(tell("Kuka oli nopein?"));
@@ -54,7 +54,7 @@ function shuffleCharacters(){
           });
         });
       });
-    }).slideDown().animate({opacity: 1}, 1000, "swing", function(){
+    }).animate({marginTop: "3rem"}).slideDown().animate({opacity: 1}, 1000, "swing", function(){
       $(this).removeClass("opacity-none");
       //Show how many questions are left
       $(".mol-info").html(tellInfo(`Kysymyksiä jäljellä: ${gameQuestions.length}`)).delay(500).slideDown();
