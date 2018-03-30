@@ -5,7 +5,7 @@ import {clone, dropRight, isEmpty, pull, random, sample, sampleSize, size, toArr
 
 var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ*";
 var realCharacters = toArray(characters);
-var gameLanguage, gameType, gameQuestions, gamePlayers = {}, currentQuestion;
+var gameLanguage, gameType, gameQuestions, gamePlayers = [], currentQuestion;
 
 //Next page
 function $next(info){
@@ -35,14 +35,14 @@ function shuffleCharacters(){
     $("#mol-round").delay(2000).hide(0, function(){
       //Who was fastest? Add button for each player
       $(this).append(tell("Kuka oli nopein?"));
-      $.each(gamePlayers, function(key){
-        $("#mol-round").append(btn(key, "winner", key));
+      $.each(gamePlayers, function(key, value){
+        $("#mol-round").append(btn(value.name, "winner", key));
       });
       //Shuffle characters again
       $(this).append(btnSmall("Uusi kirjain", "roll", "go"));
       $("[data-mol-winner]").click(function(){
         //Add point to winner
-        gamePlayers[$(this).data("mol-winner")] += 1;
+        gamePlayers[$(this).data("mol-winner")].points += 1;
         runRound();
       });
       //Shuffle characters again
@@ -82,8 +82,8 @@ function runRound(){
       if (isEmpty(gameQuestions)){
         //Show points
         $next("Pisteet!");
-        $.each(gamePlayers, function(key, values){
-          $(".mol-game").append(`<p class="h4"><strong>${key}</strong> sai <strong>${values}</strong> pistettä!</p>`);
+        $.each(gamePlayers, function(key, value){
+          $(".mol-game").append(`<p class="h4"><strong>${value.name}</strong> sai <strong>${value.points}</strong> pistettä!</p>`);
         });
         //Info: Players are not organized by amount of points
         $(this).append(tellInfo("Tiedoksi! Pelaajat eivät ole pisteiden mukaisessa järjestyksessä. Nimetkää halutessanne voittaja.<br>Uusi peli? Lataa sivu uudestaan!"));
@@ -129,7 +129,7 @@ $(function(){
         $("[data-mol-name]").click(function(){
           if($("#mol-name").val()){
             //Add player and set score to 0
-            gamePlayers[$("#mol-name").val()] = 0;
+            gamePlayers.push({name: $("#mol-name").val(), points: 0});
             $("#mol-name").val("");
             $info("Lisätty!");
           } else{
