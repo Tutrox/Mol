@@ -21,7 +21,7 @@ function shuffleCharacters(){
   $(".mol-game").append(`<h1 class="opacity-half" id="mol-characters"></h1>`);
   //Shuffle a random number of characters
   $.each(sampleSize(dropRight(realCharacters), random(5, 7)), function(key, values){
-    $("#mol-characters").delay(100).fadeOut(100, function(){
+    $("#mol-characters").delay(10).fadeOut(10, function(){
       $(this).text(values);
     }).fadeIn();
   });
@@ -31,7 +31,7 @@ function shuffleCharacters(){
   }).fadeIn().animate({fontSize: "+=3rem", opacity: 1}, 600, "swing", function(){
     $(this).removeClass("opacity-half");
     //Ask for the winner of the round
-    $(".mol-game").append(`<div class="mt-5 opacity-none" id="mol-round"></div>`);
+    $(".mol-game").append(`<div class="opacity-none" id="mol-round"></div>`);
     $("#mol-round").delay(2000).hide(0, function(){
       //Who was fastest? Add button for each player
       $(this).append(tell("Kuka oli nopein?"));
@@ -54,7 +54,7 @@ function shuffleCharacters(){
           });
         });
       });
-    }).slideDown().animate({opacity: 1}, 1000, "swing", function(){
+    }).animate({marginTop: "3rem"}).slideDown().animate({opacity: 1}, 1000, "swing", function(){
       $(this).removeClass("opacity-none");
       //Show how many questions are left
       $(".mol-info").html(tellInfo(`Kysymyksiä jäljellä: ${gameQuestions.length}`)).delay(500).slideDown();
@@ -87,7 +87,7 @@ function runRound(){
         });
         //Info: Players are not organized by amount of points
         $(this).append(tellInfo("Tiedoksi! Pelaajat eivät ole pisteiden mukaisessa järjestyksessä. Nimetkää halutessanne voittaja.<br>Uusi peli? Lataa sivu uudestaan!"));
-      } else {
+      } else{
         //Run round
         shuffleCharacters();
         shuffleQuestion();
@@ -147,8 +147,7 @@ $(function(){
             $(".mol-info").clearQueue().slideUp();
             $next("Möläytys alkakoon!");
             $(".mol-game .intro").delay(3000).fadeOut(1000, function(){
-              //Shuffle characters
-              //Shuffle question
+              //Shuffle characters & question
               runRound();
             });
           }
