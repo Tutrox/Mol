@@ -21,7 +21,7 @@ function shuffleCharacters(){
   $(".mol-game").append(`<h1 class="opacity-half" id="mol-characters"></h1>`);
   //Shuffle a random number of characters
   $.each(sampleSize(dropRight(realCharacters), random(5, 7)), function(key, values){
-    $("#mol-characters").delay(100).fadeOut(100, function(){
+    $("#mol-characters").delay(10).fadeOut(10, function(){
       $(this).text(values);
     }).fadeIn();
   });
