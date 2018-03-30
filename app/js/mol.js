@@ -87,7 +87,7 @@ function runRound(){
         });
         //Info: Players are not organized by amount of points
         $(this).append(tellInfo("Tiedoksi! Pelaajat eivät ole pisteiden mukaisessa järjestyksessä. Nimetkää halutessanne voittaja.<br>Uusi peli? Lataa sivu uudestaan!"));
-      } else {
+      } else{
         //Run round
         shuffleCharacters();
         shuffleQuestion();
@@ -147,8 +147,7 @@ $(function(){
             $(".mol-info").clearQueue().slideUp();
             $next("Möläytys alkakoon!");
             $(".mol-game .intro").delay(3000).fadeOut(1000, function(){
-              //Shuffle characters
-              //Shuffle question
+              //Shuffle characters & question
               runRound();
             });
           }
