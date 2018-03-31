@@ -54,10 +54,11 @@ function shuffleCharacters(){
           });
         });
       });
+      //Show how many questions are left
+      $(".mol-info").html(tellInfo(gameQuestions.length == 0 ? "Viimeinen kysymys!" : gameQuestions.length == 1 ? `${gameQuestions.length} kysymys jäljellä` : `${gameQuestions.length} kysymystä jäljellä`))
+        .delay(1500).slideDown();
     }).animate({marginTop: "3rem"}).slideDown().animate({opacity: 1}, 1000, "swing", function(){
       $(this).removeClass("opacity-none");
-      //Show how many questions are left
-      $(".mol-info").html(tellInfo(`Kysymyksiä jäljellä: ${gameQuestions.length}`)).delay(500).slideDown();
     });
   });
 }
