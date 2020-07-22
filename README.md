@@ -1,6 +1,5 @@
 # Mol
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Tutrox/Mol.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/Tutrox/Mol.svg?branch=master)](https://travis-ci.org/Tutrox/Mol)
 
 Mol is a simple, cool game where a character and a question is shuffled. The person who tells a correct answer gets a point.
