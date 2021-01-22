@@ -1,4 +1,4 @@
-export var languages = {
+export const languages = {
   finnish: {
     name: "Suomeksi",
     types: {
@@ -9,12 +9,13 @@ export var languages = {
   swedish: {
     name: "På svenska",
     types: {
-      classic: "Classic (den ursprungliga versionen)"
+      classic: "Classic (den ursprungliga versionen)",
+      tech: "Teknologi"
     }
   }
 };
 
-export var questions = {
+export const questions = {
   finnish: {
     classic: [
       "substantiivi",
@@ -121,6 +122,10 @@ export var questions = {
       "spel",
       "bakverk",
       "kroppsdel"
+    ],
+    tech: [
+      "programmeringsspråk",
+      "datortillverkare"
     ]
   }
 };
