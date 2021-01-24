@@ -7,7 +7,7 @@
     "build:css": "scss-powertools app/style.scss www/assets/style.css -p",
     "build:js": "rollup -c",
     "build:site": "cp app/index.html www/",
-    "serve": "serve www"
+    "dev": "serve www"
   },
   "repository": {
     "type": "git",
