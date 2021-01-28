@@ -20,8 +20,11 @@ function $info(info) {
   return $(".mol-info").slideUp().clearQueue().empty().html(tellInfo(info)).slideDown().delay(2000).slideUp();
 }
 
-function shuffleCharacters() {
-  $(".mol-game").append(`<h1 class="opacity-half" id="mol-characters"></h1>`);
+function shuffleCharacters(manual) {
+
+  //If the user manually shuffles, don't create a new element
+
+  !manual && $(".mol-game").append(`<h1 class="opacity-half" id="mol-characters"></h1>`);
 
   //Shuffle a random number of characters
 
@@ -67,7 +70,7 @@ function shuffleCharacters() {
         $("#mol-round").slideUp(300, function() {
           $(this).remove();
           $("#mol-characters").animate({fontSize: "-=3rem", opacity: 0.5}, 600, "swing", function() {
-            shuffleCharacters();
+            shuffleCharacters(true);
           });
         });
       });
