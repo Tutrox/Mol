@@ -121,7 +121,7 @@ function runRound() {
           $(".mol-game").append(`<p class="h4"><strong>${value.name}</strong> sai <strong>${value.points}</strong> ${value.points == 1 ? "pisteen" : "pistettä"}!</p>`);
         });
 
-        //Info: Players are not organized by amount of points
+        //Inform that players are not organized by amount of points
 
         $(this).append(tellInfo("Tiedoksi! Pelaajat eivät ole pisteiden mukaisessa järjestyksessä. Nimetkää halutessanne voittaja.<br>Uusi peli? Lataa sivu uudestaan!"));
       } else {
