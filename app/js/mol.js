@@ -58,6 +58,10 @@ function shuffleCharacters(manual) {
       $(this).append(btnSmall("Uusi kirjain", "roll", "go"));
       $("[data-mol-winner]").click(function() {
 
+        //Buttons are immediately disabled to prevent interacting with them while fading out
+
+        $("#mol-round button").prop("disabled", true);
+
         //Add point to winner
 
         gamePlayers[$(this).data("mol-winner")].points += 1;
