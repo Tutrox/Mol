@@ -9,8 +9,10 @@ $headings-font-weight: 400;
 $badge-font-weight: 600;
 $btn-font-weight: 600;
 
+$border-width: 2px;
 $headings-margin-bottom: 1rem;
 
+$enable-responsive-font-sizes: true;
 $enable-rounded: false;
 $enable-shadows: true;
 
@@ -34,8 +36,12 @@ $enable-shadows: true;
   max-width: 800px;
 }
 
+.mol-game h1 {
+  @extend .font-weight-bold;
+}
+
 .mol-question {
-  @extend .d-inline-block, .border, .border-secondary, .py-3, .px-5, .mt-3;
+  @extend .d-inline-block, .border, .shadow-sm, .py-3, .px-5, .mt-3;
 }
 
 .mol-question p {
