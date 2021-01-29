@@ -7,5 +7,6 @@ deploy:
   github_token: $GH_TOKEN
   keep_history: true
   local_dir: www
+  fqdn: mol.beefy.vip
   on:
     branch: master
