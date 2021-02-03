@@ -21,7 +21,7 @@
   "homepage": "https://github.com/Tutrox/Mol#readme",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.12.10",
+    "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.11",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^17.0.0",
