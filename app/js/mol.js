@@ -163,7 +163,9 @@ $(function() {
 
       $next("Valitse pelityyppi");
       $.each(languages[gameLanguage].types, function(key, value) {
-        $(".mol-game").append(!value.draft ? btn(value.name, "type", key) : btnDanger(value.name, "type", key));
+        let text = `${value.name} (${questions[gameLanguage][key].length} ${questions[gameLanguage][key].length !== 1 ? "kysymystä" : "kysymys"})`;
+
+        $(".mol-game").append(!value.draft ? btn(text, "type", key) : btnDanger(text, "type", key));
       });
 
       //Select game type
