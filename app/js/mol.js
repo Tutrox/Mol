@@ -1,12 +1,13 @@
 import {languages, questions} from "./config/questions";
 import {btn, btnDanger, btnSmall, tell, tellInfo} from "./config/html-utils";
+import {translations} from "./config/localization";
 
 import $ from "jquery";
 import {clone, dropRight, isEmpty, pull, random, sample, sampleSize, size, toArray} from "lodash-es";
 
 const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ*";
 const realCharacters = toArray(characters);
-let gameLanguage, gameType, gameQuestions, gamePlayers = [], currentQuestion;
+let gameLanguage, gameType, gameQuestions, gamePlayers = [], currentQuestion, texts;
 
 //Next page
 
@@ -48,14 +49,14 @@ function shuffleCharacters(manual) {
 
       //Who was fastest? Add button for each player
 
-      $(this).append(tell("Kuka oli nopein?"));
+      $(this).append(tell(texts.fastest));
       $.each(gamePlayers, function(key, value) {
         $("#mol-round").append(btn(value.name, "winner", key));
       });
 
       //Shuffle characters again
 
-      $(this).append(btnSmall("Uusi kirjain", "roll", "go"));
+      $(this).append(btnSmall(texts.newCharacter, "roll", "go"));
       $("[data-mol-winner]").click(function() {
 
         //Buttons are immediately disabled to prevent interacting with them while fading out
@@ -81,7 +82,7 @@ function shuffleCharacters(manual) {
 
       //Show how many questions are left
 
-      $(".mol-info").html(tellInfo(gameQuestions.length == 0 ? "Viimeinen kysymys!" : gameQuestions.length == 1 ? `${gameQuestions.length} kysymys jäljellä` : `${gameQuestions.length} kysymystä jäljellä`))
+      $(".mol-info").html(tellInfo(gameQuestions.length == 0 ? texts.lastQuestion : gameQuestions.length == 1 ? `${gameQuestions.length} ${texts.question} ${texts.left}` : `${gameQuestions.length} ${texts.questions} ${texts.left}`))
         .delay(1500).slideDown();
     }).animate({marginTop: "3rem"}).slideDown().animate({opacity: 1}, 1000, "swing", function() {
       $(this).removeClass("opacity-none");
@@ -116,14 +117,14 @@ function runRound() {
 
         //Show points
 
-        $next("Pisteet!");
+        $next(texts.points);
         $.each(gamePlayers, function(key, value) {
-          $(".mol-game").append(`<p class="h4"><strong>${value.name}</strong> sai <strong>${value.points}</strong> ${value.points == 1 ? "pisteen" : "pistettä"}!</p>`);
+          $(".mol-game").append(`<p class="h4"><strong>${value.name}</strong> ${texts.got} <strong>${value.points}</strong> ${value.points == 1 ? texts.point : texts.pointPlural}!</p>`);
         });
 
         //Inform that players are not organized by amount of points
 
-        $(this).append(tellInfo("Tiedoksi! Pelaajat eivät ole pisteiden mukaisessa järjestyksessä. Nimetkää halutessanne voittaja.<br>Uusi peli? Lataa sivu uudestaan!"));
+        $(this).append(tellInfo(texts.thankYou));
       } else {
 
         //Run round
@@ -158,12 +159,13 @@ $(function() {
 
     $("[data-mol-language]").click(function() {
       gameLanguage = $(this).data("mol-language");
+      texts = translations[gameLanguage];
 
       //Ask game type
 
-      $next("Valitse pelityyppi");
+      $next(texts.gameType);
       $.each(languages[gameLanguage].types, function(key, value) {
-        let text = `${value.name} (${questions[gameLanguage][key].length} ${questions[gameLanguage][key].length !== 1 ? "kysymystä" : "kysymys"})`;
+        let text = `${value.name} (${questions[gameLanguage][key].length} ${questions[gameLanguage][key].length !== 1 ? texts.questions : texts.question})`;
 
         $(".mol-game").append(!value.draft ? btn(text, "type", key) : btnDanger(text, "type", key));
       });
@@ -176,9 +178,9 @@ $(function() {
         
         //Ask for players
 
-        $next("Pelaajat");
-        $(".mol-game").append(`<input class="form-control form-control-lg mb-2" id="mol-name" type="text" placeholder="Nimenne, kiitos!">`)
-          .append(btnSmall("Lisää", "name", "add") + btn("Aloita möläyttäminen!", "start", "go"));
+        $next(texts.players);
+        $(".mol-game").append(`<input class="form-control form-control-lg mb-2" id="mol-name" type="text" placeholder="${texts.name}">`)
+          .append(btnSmall(texts.add, "name", "add") + btn(texts.start, "start", "go"));
         
         //Add player
 
@@ -189,12 +191,12 @@ $(function() {
 
             gamePlayers.push({name: $("#mol-name").val(), points: 0});
             $("#mol-name").val("");
-            $info("Lisätty!");
+            $info(texts.added);
           } else {
 
             //Invalid name
 
-            $info("Tuo ei näytä nimeltä :(");
+            $info(texts.invalid);
           }
         });
 
@@ -205,13 +207,13 @@ $(function() {
 
             //Cannot start the game with less than 2 players
 
-            $info("Lisää ainakin 2 pelaajaa!");
+            $info(texts.notYet);
           } else {
 
             //Here the game really starts
 
             $(".mol-info").clearQueue().slideUp();
-            $next("Möläytys alkakoon!");
+            $next(texts.getReady);
             $(".mol-game .intro").delay(3000).fadeOut(1000, function() {
               
               //Shuffle characters & question
