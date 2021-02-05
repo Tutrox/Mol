@@ -3,7 +3,7 @@ export const languages = {
     name: "Suomeksi",
     types: {
       classic: {
-        name: "Classic (alkuperäinen versio)"
+        name: "Alkuperäinen"
       },
       tech: {
         name: "Teknologia",
@@ -15,7 +15,7 @@ export const languages = {
     name: "På svenska",
     types: {
       classic: {
-        name: "Classic (den ursprungliga versionen)",
+        name: "\"Klassikern\"",
       },
       tech: {
         name: "Teknologi",
