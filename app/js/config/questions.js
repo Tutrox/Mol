@@ -20,6 +20,10 @@ export const languages = {
       tech: {
         name: "Teknologi",
         draft: true
+      },
+      mmxxi: {
+        name: "2021 quiz",
+        draft: true
       }
     }
   }
@@ -136,6 +140,9 @@ export const questions = {
     tech: [
       "programmeringsspråk",
       "datortillverkare"
+    ],
+    mmxxi: [
+      "sjukdomar"
     ]
   }
 };
