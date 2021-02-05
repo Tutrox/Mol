@@ -3,6 +3,11 @@ export function btn(text, dataname, datavalue) {
   return `<button type="button" class="btn btn-light btn-lg btn-block" data-mol-${dataname}="${datavalue}">${text}</button>`;
 }
 
+//"Dangerous" button
+export function btnDanger(text, dataname, datavalue) {
+  return `<button type="button" class="btn btn-secondary btn-lg btn-block" data-mol-${dataname}="${datavalue}">${text}</button>`;
+}
+
 //Small dark button
 export function btnSmall(text, dataname, datavalue) {
   return `<button type="button" class="btn btn-dark btn-block" data-mol-${dataname}="${datavalue}">${text}</button>`;

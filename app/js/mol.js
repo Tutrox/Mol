@@ -1,5 +1,5 @@
 import {languages, questions} from "./config/questions";
-import {btn, btnSmall, tell, tellInfo} from "./config/html-utils";
+import {btn, btnDanger, btnSmall, tell, tellInfo} from "./config/html-utils";
 
 import $ from "jquery";
 import {clone, dropRight, isEmpty, pull, random, sample, sampleSize, size, toArray} from "lodash-es";
@@ -163,7 +163,7 @@ $(function() {
 
       $next("Valitse pelityyppi");
       $.each(languages[gameLanguage].types, function(key, value) {
-        $(".mol-game").append(btn(value, "type", key));
+        $(".mol-game").append(!value.draft ? btn(value.name, "type", key) : btnDanger(value.name, "type", key));
       });
 
       //Select game type

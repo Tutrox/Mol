@@ -2,15 +2,25 @@ export const languages = {
   finnish: {
     name: "Suomeksi",
     types: {
-      classic: "Classic (alkuperäinen versio)",
-      tech: "Teknologia"
+      classic: {
+        name: "Classic (alkuperäinen versio)"
+      },
+      tech: {
+        name: "Teknologia",
+        draft: true
+      }
     }
   },
   swedish: {
     name: "På svenska",
     types: {
-      classic: "Classic (den ursprungliga versionen)",
-      tech: "Teknologi"
+      classic: {
+        name: "Classic (den ursprungliga versionen)",
+      },
+      tech: {
+        name: "Teknologi",
+        draft: true
+      }
     }
   }
 };
