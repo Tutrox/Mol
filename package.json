@@ -21,8 +21,8 @@
   "homepage": "https://github.com/Tutrox/Mol#readme",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
     "@rollup/plugin-babel": "^5.2.3",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-eslint": "^8.0.1",
@@ -31,7 +31,7 @@
     "jquery": "^3.5.1",
     "lodash-es": "^4.17.20",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.38.5",
+    "rollup": "^2.39.0",
     "rollup-plugin-terser": "^7.0.2",
     "scss-powertools": "^2.1.0",
     "serve": "^11.3.2"
