@@ -8,6 +8,10 @@ export const languages = {
       tech: {
         name: "Teknologia",
         draft: true
+      },
+      mmxxi: {
+        name: "Vuoden 2021 parhaat",
+        draft: true
       }
     }
   },
@@ -22,7 +26,7 @@ export const languages = {
         draft: true
       },
       mmxxi: {
-        name: "2021 quiz",
+        name: "De bästa frågorna 2021",
         draft: true
       }
     }
@@ -84,6 +88,14 @@ export const questions = {
     tech: [
       "ohjelmointikieli",
       "tietokonevalmistaja"
+    ],
+    mmxxi: [
+      "sairaus",
+      "lääke",
+      "kauppaketju",
+      "materiaali",
+      "tunnettu rakennus",
+      "hyönteinen"
     ]
   },
   swedish: {
@@ -142,7 +154,12 @@ export const questions = {
       "datortillverkare"
     ],
     mmxxi: [
-      "sjukdomar"
+      "sjukdom",
+      "läkemedel",
+      "butikskedja",
+      "material",
+      "känd byggnad",
+      "insekt"
     ]
   }
 };
