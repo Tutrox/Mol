@@ -87,7 +87,13 @@ export const questions = {
     ],
     tech: [
       "ohjelmointikieli",
-      "tietokonevalmistaja"
+      "tietokonevalmistaja",
+      "tunnettu ohjelmoija",
+      "NPM-paketti",
+      "ohjelmointityökalu",
+      "laite",
+      "\"verkkotermi\"",
+      "ohjelmoijahuumoria"
     ],
     mmxxi: [
       "sairaus",
@@ -151,7 +157,13 @@ export const questions = {
     ],
     tech: [
       "programmeringsspråk",
-      "datortillverkare"
+      "datortillverkare",
+      "känd programmerare",
+      "NPM-paket",
+      "programmeringsverktyg",
+      "apparat",
+      "nätverksterm",
+      "programmerarhumor"
     ],
     mmxxi: [
       "sjukdom",
