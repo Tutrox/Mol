@@ -39,7 +39,7 @@ function shuffleCharacters(manual) {
 
   $("#mol-characters").fadeOut(100, function() {
     $(this).text(sample(realCharacters));
-  }).fadeIn().animate({fontSize: "+=3rem", opacity: 1}, 600, "swing", function() {
+  }).fadeIn().animate({fontSize: "+=3vw", opacity: 1}, 600, "swing", function() {
     $(this).removeClass("opacity-half");
 
     //Ask for the winner of the round
@@ -74,7 +74,7 @@ function shuffleCharacters(manual) {
       $("[data-mol-roll]").click(function() {
         $("#mol-round").slideUp(300, function() {
           $(this).remove();
-          $("#mol-characters").animate({fontSize: "-=3rem", opacity: 0.5}, 600, "swing", function() {
+          $("#mol-characters").animate({fontSize: "-=3vw", opacity: 0.5}, 600, "swing", function() {
             shuffleCharacters(true);
           });
         });
@@ -102,7 +102,7 @@ function shuffleQuestion() {
   $(".mol-question").slideDown(300).animate({opacity: 1}, 600, "swing", function() {
     $(this).removeClass("opacity-none d-none");
   });
-  $(".mol-question p").text(currentQuestion).animate({fontSize: "+=1rem"}, 600, "swing", function() {
+  $(".mol-question p").text(currentQuestion).animate({fontSize: "+=1vw"}, 600, "swing", function() {
     
     //Remove asked question from the question list
 
