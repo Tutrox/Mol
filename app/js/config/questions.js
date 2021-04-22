@@ -83,7 +83,8 @@ export const questions = {
       "verbi",
       "peli",
       "leivonnainen",
-      "ihmiskehon osa"
+      "ihmiskehon osa",
+      "harrastus"
     ],
     tech: [
       "ohjelmointikieli",
@@ -153,7 +154,8 @@ export const questions = {
       "verb",
       "spel",
       "bakverk",
-      "kroppsdel"
+      "kroppsdel",
+      "hobby"
     ],
     tech: [
       "programmeringsspråk",
