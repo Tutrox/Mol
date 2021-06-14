@@ -1,6 +1,5 @@
 # Mol
-
-[![Build Status](https://travis-ci.org/Tutrox/Mol.svg?branch=master)](https://travis-ci.org/Tutrox/Mol)
+![lint status](https://github.com/Tutrox/Mol/actions/workflows/lint.yml/badge.svg)
 
 Mol is a simple, cool game where a character and a question is shuffled. The person who tells a correct answer gets a point.
 
