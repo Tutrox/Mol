@@ -2,31 +2,28 @@
 
 $font-family-sans-serif: "Source Sans Pro", sans-serif;
 $intro-font-family: "Permanent Marker", sans-serif;
-
 $primary: #e0e094;
 $secondary: #fff7df;
-
 $headings-font-weight: 400;
 $badge-font-weight: 600;
 $btn-font-weight: 600;
-
 $border-width: 2px;
 $headings-margin-bottom: 1rem;
-
 $enable-responsive-font-sizes: true;
 $enable-rounded: false;
 $enable-shadows: true;
 
-//Required
+// stylelint-disable no-invalid-position-at-import-rule, scss/at-extend-no-missing-placeholder
+
+// Required
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 
 .mol-container {
   @extend .d-flex, .flex-column, .justify-content-center, .align-items-center, .text-center, .py-3;
-
-  @include make-container();
-  @include make-container-max-widths();
+  @include make-container;
+  @include make-container-max-widths;
 
   min-height: 100vh;
 }
@@ -54,14 +51,14 @@ $enable-shadows: true;
 }
 
 .opacity-none {
-  opacity: 0;
+  opacity: 0%;
 }
 
 .opacity-half {
-  opacity: 0.5;
+  opacity: 50%;
 }
 
-//Extra
+// Extra
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/forms";
