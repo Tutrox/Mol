@@ -10,7 +10,10 @@ export const languages = {
         draft: true
       },
       mmxxi: {
-        name: "Vuoden 2021 parhaat",
+        name: "Vuoden 2021 parhaat"
+      },
+      mmxxii: {
+        name: "Vuoden 2022 parhaat",
         draft: true
       }
     }
@@ -26,7 +29,10 @@ export const languages = {
         draft: true
       },
       mmxxi: {
-        name: "De bästa frågorna 2021",
+        name: "De bästa frågorna 2021"
+      },
+      mmxxii: {
+        name: "De bästa frågorna 2022",
         draft: true
       }
     }
@@ -103,6 +109,9 @@ export const questions = {
       "materiaali",
       "tunnettu rakennus",
       "hyönteinen"
+    ],
+    mmxxii: [
+      "rikosnimike"
     ]
   },
   swedish: {
@@ -174,6 +183,9 @@ export const questions = {
       "material",
       "känd byggnad",
       "insekt"
+    ],
+    mmxxii: [
+      "brottsrubricering"
     ]
   }
 };
