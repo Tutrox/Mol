@@ -1,6 +1,6 @@
 export const translations = {
   finnish: {
-    gameType: "Valitse pelityyppi",
+    gameType: "Valitse pelityyppi (keltainen = luonnos)",
     questions: "kysymystä",
     question: "kysymys",
     players: "Pelaajat",
@@ -23,7 +23,7 @@ export const translations = {
     Nimetkää halutessanne voittaja.<br>Uusi peli? Lataa sivu uudestaan!`
   },
   swedish: {
-    gameType: "Välj speltyp",
+    gameType: "Välj speltyp (gult = utkast)",
     questions: "frågor",
     question: "fråga",
     players: "Spelare",
