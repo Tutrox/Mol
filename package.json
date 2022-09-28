@@ -22,7 +22,7 @@
   "homepage": "https://github.com/Tutrox/Mol#readme",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.19.0",
+    "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.0",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
