@@ -32,7 +32,7 @@
     "jquery": "^3.6.1",
     "lodash-es": "^4.17.21",
     "npm-run-all": "^4.1.5",
-    "rollup": "^3.7.3",
+    "rollup": "^3.7.5",
     "sass-plus": "~0.11.0",
     "serve": "^14.1.2"
   }
